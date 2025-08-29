@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Notas cadastrados</h1>
+      <table border="1px">
+        <tr>
+          <th>id</th>
+          <th>titulo</th>
+          <th>conteudo</th>
+        </tr>
+        {% for nota in notas%}
+        <tr>
+          <td>{{nota.id}}</td>
+          <td>{{nota.titulo}}</td>
+          <td>{{nota.conteudo}}</td>
+          <td><a href="{% url 'notas:remover' nota.id %}">remover</a></td>
+          <td><a href="{% url 'notas:editar' nota.id %}">editar</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="{% url 'notas:adicionar'%}">Adicionar</a>
+    </div>
+</body>
+</html>
