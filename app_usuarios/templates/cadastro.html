@@ -1,0 +1,13 @@
+<h1>Cadastro de Usuarios</h1>
+
+<form action="{% url 'cadastro' %}" method="post">{% csrf_token %}
+
+    <input type="text" name="username" id="">
+    <br>
+    <input type="text" name="email" id="">
+    <br>
+    <input type="password" name="senha">
+    <br>
+    <input type="submit" name="enviar" placeholder="Cadastrar">
+
+</form>
